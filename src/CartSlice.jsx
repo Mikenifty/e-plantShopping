@@ -26,6 +26,11 @@ export const CartSlice = createSlice({
                     itemToUpdate.quantity = quantity;
                 }
     },
+
+
+
+
+    
   },
 });
 
