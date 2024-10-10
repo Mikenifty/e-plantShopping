@@ -245,19 +245,19 @@ function ProductList() {
     }
 
     const handleCartClick = (e) => {
-    e.preventDefault();
-    setShowCart(true);                 // Set showCart to true when cart icon is clicked
+            e.preventDefault();
+            setShowCart(true);                 // Set showCart to true when cart icon is clicked
     };
 
     const handlePlantsClick = (e) => {
-    e.preventDefault();
-    setShowPlants(true);                // Set showAboutUs to true when "About Us" link is clicked
-    setShowCart(false);                 // Hide the cart when navigating to About Us
+            e.preventDefault();
+            setShowPlants(true);                // Set showAboutUs to true when "About Us" link is clicked
+            setShowCart(false);                 // Hide the cart when navigating to About Us
     };
 
     const handleContinueShopping = (e) => {
-    e.preventDefault();
-    setShowCart(false);
+            e.preventDefault();
+            setShowCart(false);
     };
 
     const cartQuant = useSelector(state => state.cart.items); // Retrieve the quantity of all items in the cart from the redux store
@@ -271,13 +271,13 @@ function ProductList() {
     const [addedToCart, setAddedToCart] = useState({});   // Initiate a state to handle styling of the add to cart button
 
     const handleNotInCart = (item) => {         // Function to manage the above styling state when items are removed
-        delete addedToCart[item.name];
+            delete addedToCart[item.name];
     }
 
     const handleAddToCart = (product) => {      // Function to manage the above styling state when items are added
-    dispatch(addItem(product));                 // dispatch the addItem function
-    setAddedToCart((prevState) => ({
-       ...prevState, [product.name]: true,       // Set the product name as key and value as true to indicate it has been added to cart
+            dispatch(addItem(product));                 // dispatch the addItem function
+            setAddedToCart((prevState) => ({
+                 ...prevState, [product.name]: true,       // Set the product name as key and value as true to indicate it has been added to cart
     })); 
     };
 
@@ -289,8 +289,8 @@ function ProductList() {
             <div className="tag">
                <div className="luxury">
                <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
-               <a href="/" style={{textDecoration:'none'}}>
-                        <div>
+                    <a href="/main.jsx" style={{textDecoration:'none'}}>
+                    <div>
                     <h3 style={{color:'white'}}>Paradise Nursery</h3>
                     <i style={{color:'white'}}>Where Green Meets Serenity</i>
                     </div>
@@ -311,7 +311,7 @@ function ProductList() {
     <div className="product-grid">
     {plantsArray.map((category, index) => (
     <div key={index}>
-        <h1><div>{category.category}</div></h1>
+        <h1><div className='cat'>{category.category}</div></h1>
         <div className="product-list">
             {category.plants.map((plant, plantIndex) => (
             <div className="product-card" key={plantIndex}>
